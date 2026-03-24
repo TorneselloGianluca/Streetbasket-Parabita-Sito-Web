@@ -7,7 +7,7 @@ import WorkInProgress from './pagine/WorkInProgress';
 
 function App() {
   return (
-      <Router>
+      <Router basename="/Streetbasket-Parabita-Sito-Web">
         <Nav /> 
         <Routes>
           <Route path="/" element={<StreetbasketParabita />} />
