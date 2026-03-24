@@ -1,0 +1,53 @@
+.marquee-wrapper {
+  width: 100%;
+  height: 120px; /* Altezza ridotta per essere una striscia */
+  background: #f9f9f9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin: 40px 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content; /* Fondamentale per allineare tutto */
+  animation: scroll 20s linear infinite; /* 20s = velocità dello scorrimento */
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 200px; /* Spazio per ogni logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.marquee-item img {
+  height: 50px; /* Altezza fissa del logo */
+  filter: grayscale(100%); /* Stile professionale: loghi grigi */
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.marquee-item img:hover {
+  filter: grayscale(0%); /* Torna a colori al passaggio del mouse */
+  opacity: 1;
+}
+
+/* L'animazione magica */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Opzionale: Ferma lo scorrimento quando l'utente ci passa sopra */
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}

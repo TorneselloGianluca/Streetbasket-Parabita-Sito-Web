@@ -1,0 +1,80 @@
+/* Effetto scorrimento fluido per tutta la pagina */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container della Navigazione Secondaria */
+.sb-secondary-nav {
+  position: sticky;
+  top: 70px; /* Se hai una navbar principale alta 70px, questa si attacca sotto */
+  background-color: #ffffff; /* Sfondo bianco solido per coprire il testo sotto */
+  z-index: 999; /* Valore altissimo per stare sopra a video e caroselli */
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Lista orizzontale dei link */
+.sb-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Spazio tra le voci del menu */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Stile del singolo link */
+.sb-nav-link {
+  text-decoration: none;
+  color: #555555;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Effetto al passaggio del mouse */
+.sb-nav-link:hover {
+  color: #646cff; /* Il tuo viola brand */
+}
+
+/* Linea decorativa che appare sotto al link in hover */
+.sb-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #646cff;
+  transition: width 0.3s ease;
+}
+
+.sb-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Fix per evitare che il titolo della sezione finisca "sotto" la nav quando clicchi */
+section[id], footer[id] {
+  scroll-margin-top: 130px; 
+}
+
+/* Adattamento per dispositivi mobili */
+@media (max-width: 768px) {
+  .sb-secondary-nav {
+    top: 60px; /* Eventuale altezza diversa per mobile */
+  }
+  .sb-nav-list {
+    gap: 15px;
+  }
+  .sb-nav-link {
+    font-size: 0.7rem;
+  }
+}

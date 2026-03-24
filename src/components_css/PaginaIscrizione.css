@@ -1,0 +1,201 @@
+/* 1. Layout Generale */
+.iscrizione-page-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #fcfcfc;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.three-column-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne identiche */
+  gap: 30px;
+  align-items: stretch; /* Tutte alte uguali */
+}
+
+/* 2. Stile Card (Comune a tutte e 3) */
+.column-section {
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.column-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 15px;
+}
+
+.step-number {
+  background: #646cff;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* 3. Form Iscrizione (Versione Compatta) */
+.iscrizione-form-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Nome squadra più largo della categoria */
+  gap: 10px;
+}
+
+.form-row input, .category-select {
+  padding: 12px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.giocatori-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.giocatore-row {
+  display: grid;
+  grid-template-columns: 25px 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.giocatore-row span {
+  font-weight: 700;
+  color: #646cff;
+  font-size: 0.8rem;
+}
+
+.giocatore-row input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+/* 4. Elementi Informativi (Col 2 e 3) */
+.info-box-styled, .privacy-text-small {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.info-box-styled p {
+  margin-bottom: 15px;
+}
+
+.download-btn-minimal {
+  width: 100%;
+  padding: 12px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+/* 5. Lista Squadre (Footer Pagina) */
+.squadre-list-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.squadre-list-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.squadre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.squadra-badge {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.squadra-badge:hover {
+  background: #646cff;
+}
+
+.squadra-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.squadra-cat {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* 6. Bottone Submit Premium */
+.submit-btn-premium {
+  padding: 15px;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn-premium:hover {
+  background: #535bf2;
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+}
+
+/* 7. Responsive */
+@media (max-width: 1024px) {
+  .three-column-container {
+    grid-template-columns: 1fr; /* Una colonna su mobile/tablet */
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

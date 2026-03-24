@@ -1,0 +1,99 @@
+.insta-preview-section {
+  padding: 60px 5%;
+  background: #fff;
+  text-align: center;
+}
+
+.insta-header {
+  margin-bottom: 40px;
+}
+
+.insta-icon-main {
+  font-size: 3rem;
+  color: #E1306C; /* Colore tipico Instagram */
+  margin-bottom: 15px;
+}
+
+.insta-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.insta-header p {
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.follow-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #646cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.follow-btn:hover {
+  background: #E1306C;
+  transform: translateY(-3px);
+}
+
+/* Griglia stile Instagram */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne come su IG */
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.insta-item {
+  position: relative;
+  aspect-ratio: 1 / 1; /* Rende le foto quadrate perfette */
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.insta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.insta-item:hover .insta-overlay {
+  opacity: 1;
+}
+
+.insta-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne su mobile */
+    gap: 8px;
+  }
+}

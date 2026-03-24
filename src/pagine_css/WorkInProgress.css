@@ -1,0 +1,72 @@
+.wip-container {
+  height: 80vh; /* Prende quasi tutta l'altezza dello schermo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.wip-content {
+  text-align: center;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.wip-icon-wrapper {
+  font-size: 4rem;
+  color: #646cff;
+  margin-bottom: 20px;
+  animation: hammer-swing 2s ease-in-out infinite;
+}
+
+.wip-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.wip-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.wip-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background-color: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.wip-back-btn:hover {
+  background-color: #646cff;
+  transform: translateX(-5px);
+}
+
+/* Animazione del martello */
+@keyframes hammer-swing {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-25deg); }
+}
+
+/* Decorazione di sfondo */
+.wip-bg-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(100, 108, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 1;
+  border-radius: 50%;
+}

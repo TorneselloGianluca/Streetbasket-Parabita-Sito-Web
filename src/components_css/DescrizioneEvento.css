@@ -1,0 +1,162 @@
+/* Container principale della sezione */
+.event-description-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Box bianco che contiene tutto */
+.event-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* --- COLONNA SINISTRA: IMAGE STACK --- */
+.event-images-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 350px; /* Altezza necessaria per gestire il posizionamento absolute */
+}
+
+/* Immagine in primo piano (Logo Streetbasket) */
+.img-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  z-index: 2;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+/* Immagine di sfondo (Logo Parabita o Foto) */
+.img-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 65%;
+  z-index: 1;
+  border-radius: 20px;
+  opacity: 0.8;
+  transition: transform 0.4s ease;
+  filter: grayscale(20%);
+}
+
+/* Effetto al passaggio del mouse sul contenitore delle immagini */
+.image-stack:hover .img-top {
+  transform: translate(-10px, -10px) scale(1.02);
+}
+
+.image-stack:hover .img-bottom {
+  transform: translate(10px, 10px) rotate(2deg);
+  opacity: 1;
+}
+
+/* --- COLONNA DESTRA: TESTO --- */
+.event-text-column {
+  flex: 1.2;
+}
+
+.badge {
+  display: inline-block;
+  background: #f0f2ff;
+  color: #646cff;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.description-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Griglia dettagli in basso */
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.spec-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .event-container {
+    flex-direction: column;
+    padding: 40px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .image-stack {
+    height: 300px;
+    max-width: 300px;
+  }
+
+  .specs-grid {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}

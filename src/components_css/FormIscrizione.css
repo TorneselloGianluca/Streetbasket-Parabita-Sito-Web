@@ -1,0 +1,114 @@
+/* Container principale */
+.iscrizione-form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+.iscrizione-form h2 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Campi input generali */
+.iscrizione-form input[type="text"],
+.iscrizione-form input[type="email"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Importante per il padding */
+}
+
+.iscrizione-form input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+/* Griglia per i giocatori */
+.giocatore-input {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border-left: 5px solid #646cff;
+}
+
+.giocatore-input h4 {
+  margin: 0 0 10px 0;
+  color: #646cff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Nome e Cognome affiancati sui desktop */
+.giocatore-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .giocatore-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .giocatore-input h4 {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Box Privacy */
+.privacy-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 25px 0;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.privacy-box input {
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.privacy-box a {
+  color: #646cff;
+  text-decoration: underline;
+}
+
+/* Bottone Invia */
+.iscrizione-form button {
+  width: 100%;
+  padding: 15px;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.iscrizione-form button:hover {
+  background: #535bf2;
+  transform: translateY(-2px);
+}
+
+.iscrizione-form button:active {
+  transform: translateY(0);
+}
