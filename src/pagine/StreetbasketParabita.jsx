@@ -82,10 +82,6 @@ function StreetbasketParabita() {
         </div>
       </section>
 
-       {/* Sezione 6: Instagram Preview */}
-        <section id="instagram">
-            <InstagramPreview />
-        </section>
 
       {/* Sezione 5: Contatti */}
       <section id="contatti">
