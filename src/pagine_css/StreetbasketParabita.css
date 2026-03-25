@@ -1,169 +1,54 @@
-/* --- LAYOUT GENERALE --- */
 .project-page {
   width: 100%;
-  background-color: #fff;
-  overflow-x: hidden; /* Evita scroll orizzontale fastidioso */
+  overflow-x: hidden;
 }
 
-/* --- HERO CON VIDEO (SFONDO) --- */
 .video-hero {
   position: relative;
-  height: 100vh;
+  height: 80vh; /* Leggermente più basso per far capire che si può scrollare */
   width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background-color: #000;
 }
 
 .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 1;
-  transform: translate(-50%, -50%);
   object-fit: cover;
+  z-index: -1;
 }
 
-/* --- OVERLAY SOPRA IL VIDEO --- */
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  /* Velo scuro per far risaltare il bianco del testo */
-  background: rgba(0, 0, 0, 0.4); 
+  color: white;
   padding: 0 20px;
-  box-sizing: border-box;
-  pointer-events: none;
 }
 
-/* TITOLO BIANCO E FLUIDO */
 .project-title {
-  color: #ffffff !important;
-  /* clamp(min, pref, max) -> il font si adatta da solo allo schermo */
-  font-size: clamp(1.8rem, 8vw, 5rem); 
+  font-size: clamp(2rem, 10vw, 4rem);
   font-weight: 900;
-  letter-spacing: 5px;
-  margin: 0;
-  text-transform: uppercase;
-  line-height: 1.1;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
 }
 
 .hero-subtitle {
-  color: #ffffff !important;
-  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-  margin-top: 20px;
-  letter-spacing: 2px;
-  opacity: 0.9;
-  text-transform: uppercase;
-  max-width: 900px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
+  margin-top: 10px;
 }
 
-/* INDICATORE SCROLL */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: bounce 2s infinite;
-}
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
-}
-
-/* --- SEZIONE CONTENUTI --- */
-.project-content {
-  position: relative;
-  z-index: 10;
-  background: white;
-  padding: 80px 20px;
-}
-
-/* --- FOOTER LIGHT --- */
-.project-footer {
-  background-color: #ffffff;
-  color: #1a1a1a;
-  padding: 80px 20px 40px 20px;
-  text-align: center;
-  border-top: 1px solid #f0f0f0;
-}
-
-.footer-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 10px;
+.footer-content {
+  padding: 40px 20px;
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin: 40px 0;
   flex-wrap: wrap;
-}
-
-.social-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #646cff;
-  transition: all 0.3s ease;
-}
-
-.social-item .icon {
-  font-size: 2.8rem;
-  margin-bottom: 12px;
-}
-
-.social-item span {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #555;
-}
-
-.social-item:hover {
-  transform: translateY(-8px);
-  color: #1a1a1a;
-}
-
-.copyright {
-  margin-top: 60px;
-  font-size: 0.8rem;
-  color: #aaa;
-  border-top: 1px solid #f8f8f8;
-  padding-top: 30px;
-}
-
-/* --- RESPONSIVE FIXES --- */
-@media (max-width: 768px) {
-  .project-title {
-    letter-spacing: 2px; /* Ridotto per schermi piccoli */
-  }
-  .social-links {
-    gap: 30px;
-  }
+  justify-content: center;
+  gap: 20px;
 }

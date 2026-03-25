@@ -13,6 +13,7 @@ import StreetbasketNav from '../components/StreetbasketNav';
 import Anni from '../components/Anni';
 import InstagramPreview from '../components/InstagramPreview';
 
+
 function StreetbasketParabita() {
   const videoRef = useRef(null);
 
@@ -60,6 +61,8 @@ function StreetbasketParabita() {
       <section id="shop">
          <MaglieShop />
       </section>
+
+   
       
       {/* Sezione 4: Iscrizione */}
       <section id="iscrizione">
