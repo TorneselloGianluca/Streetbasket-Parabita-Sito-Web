@@ -35,33 +35,30 @@
     --social-bg: rgba(47, 48, 58, 0.5);
   }
 }
+/* ... mantieni le tue variabili :root sopra ... */
 
 body {
   margin: 0;
-  overflow-x: hidden; /* Impedisce lo scorrimento laterale fastidioso */
+  overflow-x: hidden; /* Evita lo scroll laterale fastidioso */
 }
 
 #root {
-  width: 100%; /* Fluido su mobile */
-  max-width: 1126px; /* Limite massimo per PC */
+  width: 100%; /* Diventa fluido */
+  max-width: 1126px; /* Ma su PC si ferma a 1126px */
   margin: 0 auto;
   text-align: center;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
 }
 
-
+/* Sistema i titoli che su mobile escono dai bordi */
 h1 {
-  font-size: clamp(32px, 8vw, 56px); 
-  margin: 20px 0;
-  padding: 0 20px;
+  font-size: clamp(28px, 8vw, 56px); /* Si ridimensiona da solo */
+  padding: 0 15px;
 }
 
-
-section {
-  width: 100%;
-  box-sizing: border-box;
+h2 {
+  font-size: clamp(20px, 5vw, 24px);
 }
