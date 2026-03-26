@@ -62,12 +62,6 @@ function StreetbasketParabita() {
          <MaglieShop />
       </section>
 
-   
-      
-      {/* Sezione 4: Iscrizione */}
-      <section id="iscrizione">
-        <PaginaIscrizione />
-      </section>
       
       {/* Sezione Mappa (Opzionale: puoi darle un id se vuoi un tasto dedicato) */}
       <section className="map-section">

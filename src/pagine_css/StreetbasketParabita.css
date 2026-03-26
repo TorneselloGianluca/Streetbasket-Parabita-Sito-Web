@@ -1,54 +1,224 @@
+/* --- LAYOUT GENERALE --- */
 .project-page {
   width: 100%;
-  overflow-x: hidden;
+  background-color: #fff; /* Fondo bianco di base per il resto della pagina */
 }
 
+/* --- HERO CON VIDEO (SFONDO) --- */
 .video-hero {
   position: relative;
-  height: 80vh; /* Leggermente più basso per far capire che si può scrollare */
+  height: 100vh; /* Prende tutta l'altezza dello schermo */
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  background-color: #000; /* Fondo nero mentre il video carica */
 }
 
 .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Portato a 1 per sicurezza */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Riempie lo spazio senza deformarsi */
 }
 
+/* --- OVERLAY SOPRA IL VIDEO --- */
 .hero-overlay {
+  position: relative;
+  z-index: 2; /* Deve essere maggiore del video (z-index: 1) */
   text-align: center;
   color: white;
-  padding: 0 20px;
+  /* background: rgba(0, 0, 0, 0.4); <-- Se vuoi scurire tutto il video scommenta questa */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Evita che l'overlay "blocchi" il video nel browser */
+}
+
+/* Scatola di testo per aumentare la leggibilità senza coprire tutto il video */
+.hero-overlay h1, .hero-overlay p {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombra sul testo per leggere meglio */
 }
 
 .project-title {
-  font-size: clamp(2rem, 10vw, 4rem);
+  font-size: clamp(2rem, 8vw, 5rem); 
   font-weight: 900;
-  text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+  letter-spacing: 5px;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
-  font-size: clamp(0.9rem, 4vw, 1.2rem);
+  font-size: 1.2rem;
   margin-top: 10px;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
+/* --- SEZIONE DESCRIZIONE --- */
+.project-content {
+  position: relative;
+  z-index: 10; /* Assicura che scorra sopra il video */
+  background: white;
+  padding: 80px 20px;
+  min-height: 50vh; 
+  display: flex;
+  justify-content: center;
+}
 
-.footer-content {
-  padding: 40px 20px;
+.text-wrapper {
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0;
+  padding: 20px;
+  background: #f9f9f9;
+  border-left: 5px solid #646cff;
+}
+
+/* --- FOOTER LIGHT --- */
+.project-footer {
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #1a1a1a;
+  padding: 80px 20px 40px 20px;
+  text-align: center;
+  border-top: 1px solid #f0f0f0; /* Linea sottile di separazione */
+}
+
+.footer-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .social-links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #646cff; /* Le scritte e le icone ora sono del tuo viola */
+  transition: all 0.3s ease;
+}
+
+.social-item .icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.social-item span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555; /* Testo grigio scuro per non appesantire */
+}
+
+.social-item:hover {
+  transform: translateY(-8px);
+}
+
+.social-item:hover .icon {
+  color: #1a1a1a; /* L'icona diventa nera al passaggio */
+}
+
+.copyright {
+  margin-top: 60px;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-top: 1px solid #f8f8f8;
+  padding-top: 30px;
+}
+
+/* Hover Effects */
+.social-item:hover {
+  color: white;
+  transform: translateY(-5px);
+}
+
+.social-item:hover .icon {
+  color: #646cff; /* Colore brand al passaggio */
+}
+
+.copyright {
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Container della sezione mappa */
+.map-section {
+  padding: 80px 20px;
+  background-color: #ffffff; /* Sfondo pulito */
+  display: flex;
+  justify-content: center;
+}
+
+/* Il "box" che contiene la mappa */
+.map-container {
+  max-width: 1100px;
+  width: 100%;
+  height: 450px;
+  border-radius: 30px; /* Angoli molto arrotondati stile moderno */
+  overflow: hidden; /* Fondamentale per "tagliare" la mappa agli angoli */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Ombra profonda e morbida */
+  border: 1px solid #eee;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effetto al passaggio del mouse sul contenitore */
+.map-container:hover {
+  transform: translateY(-10px); /* Si alza leggermente */
+  box-shadow: 0 30px 60px rgba(100, 108, 255, 0.15); /* L'ombra diventa viola brand */
+}
+
+/* Stile specifico per l'iframe della mappa */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%) contrast(1.2) opacity(0.8); /* Mappa in bianco e nero professionale */
+  transition: filter 0.6s ease;
+}
+
+/* Quando passi il mouse, la mappa torna a colori */
+.map-container:hover iframe {
+  filter: grayscale(0%) contrast(1) opacity(1);
 }

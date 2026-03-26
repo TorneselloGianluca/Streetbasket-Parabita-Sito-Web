@@ -6,7 +6,6 @@ const StreetbasketNav = () => {
     { label: 'Il Progetto', target: '#descrizione' },
     { label: 'Gallery', target: '#gallery' },
     { label: 'Shop', target: '#shop' },
-    { label: 'Iscrizioni', target: '#iscrizione' },
     { label: 'Contatti', target: '#contatti' },
   ];
 
