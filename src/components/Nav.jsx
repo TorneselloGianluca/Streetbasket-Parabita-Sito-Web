@@ -17,6 +17,7 @@ function Nav() {
       </div>
       
       <ul className="nav-links">
+        <li><Link to="/sponsor" className="nav-item">Sponsor</Link></li>
         <li><Link to="/workInProgress" className="nav-item">Fotogallery</Link></li>
         <li><Link to="/Edizione2026" className="nav-item">Edizione 2026</Link></li>
         <li><Link to="/workInProgress" className="nav-item">Lavora con noi</Link></li>

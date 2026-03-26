@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa';
 import '../pagine_css/StreetbasketParabita.css';
-import Sponsor from '../components/Sponsor';
 import MaglieShop from '../components/MaglieShop';
 import logoStreet from '../assets/logoTorneo.png';
 import videoStreet from '../assets/foto_streetbasketParabita/video_torneo.mp4';
@@ -79,6 +78,13 @@ function StreetbasketParabita() {
         </div>
       </section>
 
+      <div className="disclaimer-box">
+        <p>
+          <strong>Informativa Immagini:</strong> Partecipando all'evento, si acconsente alla realizzazione 
+          e alla pubblicazione di foto e video sui nostri canali ufficiali. Tutti i partecipanti registrati 
+          hanno sottoscritto apposita liberatoria in fase di iscrizione.
+        </p>
+      </div>
 
       {/* Sezione 5: Contatti */}
       <section id="contatti">

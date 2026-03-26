@@ -222,3 +222,13 @@
 .map-container:hover iframe {
   filter: grayscale(0%) contrast(1) opacity(1);
 }
+
+.disclaimer-box {
+  background: #f9f9f9;
+  border-left: 4px solid #646cff;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #666;
+  border-radius: 8px;
+}

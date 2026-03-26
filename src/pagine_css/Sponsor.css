@@ -1,0 +1,149 @@
+/* Container principale della pagina */
+.sponsor-page-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff; /* Pulito total white */
+}
+
+/* Header della pagina */
+.sponsor-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sponsor-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sponsor-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Griglia degli Sponsor */
+.sponsor-grid {
+  display: grid;
+  /* Crea colonne automatiche, minimo 280px, massimo 1fr (4+ per riga su desktop) */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Spazio tra le card */
+}
+
+/* La singola Card Sponsor */
+.sponsor-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 200px; /* Altezza fissa per uniformità */
+  overflow: hidden; /* Fondamentale per l'overlay */
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Effetto elevazione al passaggio del mouse */
+.sponsor-card:hover {
+  transform: translateY(-8px);
+  border-color: #646cff; /* Il tuo viola brand */
+  box-shadow: 0 20px 40px rgba(100, 108, 255, 0.1);
+}
+
+/* Contenitore Logo (sempre visibile) */
+.sponsor-logo-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.sponsor-logo {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain; /* Mantiene le proporzioni senza tagliare */
+}
+
+/* L'overlay nascosto inizialmente */
+.sponsor-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.98); /* Sfondo quasi opaco */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0; /* Nascosto */
+  transform: translateY(20px); /* Leggermente abbassato */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Mostra l'overlay al passaggio del mouse */
+.sponsor-card:hover .sponsor-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Quando l'overlay è attivo, il logo sotto scompare leggermente */
+.sponsor-card:hover .sponsor-logo-wrapper {
+  opacity: 0.1;
+}
+
+/* Stile del nome dello sponsor nell'overlay */
+.sponsor-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Stile del bottone "Visita Sito" */
+.visit-site-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #646cff; /* Il tuo viola brand */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.visit-site-btn:hover {
+  background-color: #535bf2;
+  transform: scale(1.05);
+}
+
+/* --- RESPONSIVE PER DISPOSITIVI MOBILI --- */
+@media (max-width: 768px) {
+  .sponsor-title {
+    font-size: 2.5rem;
+  }
+  .sponsor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Card leggermente più piccole */
+    gap: 20px;
+  }
+  .sponsor-card {
+    height: 160px;
+  }
+}
