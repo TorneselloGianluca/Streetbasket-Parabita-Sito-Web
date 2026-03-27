@@ -20,7 +20,7 @@ function Nav() {
         <li><Link to="/sponsor" className="nav-item">Sponsor</Link></li>
         <li><Link to="/workInProgress" className="nav-item">Fotogallery</Link></li>
         <li><Link to="/Edizione2026" className="nav-item">Edizione 2026</Link></li>
-        <li><Link to="/workInProgress" className="nav-item">Lavora con noi</Link></li>
+        <li><Link to="/lavoraConNoi" className="nav-item">Lavora con noi</Link></li>
         <li><Link to="/" className="nav-item">Home</Link></li>
         <li>
           <Link to="/workInProgress" className="nav-item settings-icon" title="Impostazioni">

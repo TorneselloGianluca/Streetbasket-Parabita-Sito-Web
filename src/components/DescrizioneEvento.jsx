@@ -1,26 +1,19 @@
 import React from 'react';
 import '../components_css/DescrizioneEvento.css';
 import logoStreet from '../assets/logoTorneo.png';
-import logoParabita from '../assets/sponsor5.png';
-
 
 const DescrizioneEvento = () => {
   return (
     <section className="event-description-section">
       <div className="event-container">
         
-        {/* COLONNA SINISTRA: LOGO */}
+        {/* COLONNA SINISTRA: LOGO SINGOLO */}
         <div className="event-images-column">
-          <div className="image-stack">
+          <div className="logo-wrapper">
             <img 
               src={logoStreet} 
-              alt="Logo Streetbasket" 
-              className="img-top"
-            />
-            <img 
-              src={logoParabita} 
-              alt="Momento Torneo" 
-              className="img-bottom"
+              alt="Logo Streetbasket Parabita" 
+              className="img-single-logo"
             />
           </div>
         </div>
@@ -28,28 +21,25 @@ const DescrizioneEvento = () => {
         {/* COLONNA DESTRA: TESTO */}
         <div className="event-text-column">
           <div className="badge">Edizione VI • 2026</div>
-          <h2 className="section-title">Il Progetto</h2>
+          <h2 className="section-title">Più di un <span className="highlight">Torneo</span>, È un’<span className="highlight">Esperienza</span></h2>
           
           <div className="description-content">
             <p>
-              <strong>Streetbasket Parabita</strong> è molto più di un semplice torneo: è un evento 3vs3 
-              giunto alla sua sesta edizione che trasforma l'estate salentina in una celebrazione dello sport 
-              e dell'inclusione sociale.
+              <strong>Streetbasket Parabita</strong> giunge alla sua sesta edizione, trasformando l’estate salentina in una celebrazione pura dello sport e dell’inclusione sociale.
             </p>
             <p>
-              In un'atmosfera festosa tra musica, street food e competizione agonistica, il torneo coinvolge 
-              atleti e appassionati da tutta la regione, creando un'esperienza unica nel cuore di Parabita.
+              Agonismo, musica, street food e condivisione creano un’atmosfera unica nel cuore del centro storico. Unisciti a noi per vivere l’evento che coinvolge atleti e appassionati da tutta la regione.
             </p>
           </div>
 
           <div className="specs-grid">
             <div className="spec-item">
-              <span className="spec-label">Location</span>
-              <span className="spec-value">Parabita (LE), Italia</span>
+              <span className="spec-label">Location Ufficiale</span>
+              <span className="spec-value">Via Roma (LE), Parabita</span>
             </div>
             <div className="spec-item">
               <span className="spec-label">Il mio Ruolo</span>
-              <span className="spec-value">Creatore, Organizzatore, Creatore contenuti social</span>
+              <span className="spec-value">Creatore, Organizzatore & Contenuti Social</span>
             </div>
           </div>
         </div>

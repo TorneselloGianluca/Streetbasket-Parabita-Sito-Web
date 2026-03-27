@@ -5,6 +5,7 @@ import './App.css';
 import WorkInProgress from './pagine/WorkInProgress';
 import Edizione2026 from './pagine/Edizione2026';
 import Sponsor from './pagine/Sponsor';
+import Lavora from './pagine/Lavora';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/workInProgress" element={<WorkInProgress />} />
           <Route path="/Edizione2026" element={<Edizione2026 />} />
           <Route path="/sponsor" element={<Sponsor />} />
+          <Route path="/lavoraConNoi" element={<Lavora />} />
         </Routes>
       </Router>
   );
