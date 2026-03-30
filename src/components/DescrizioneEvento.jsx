@@ -38,8 +38,8 @@ const DescrizioneEvento = () => {
               <span className="spec-value">Via Roma (LE), Parabita</span>
             </div>
             <div className="spec-item">
-              <span className="spec-label">Il mio Ruolo</span>
-              <span className="spec-value">Creatore, Organizzatore & Contenuti Social</span>
+              <span className="spec-label">Resta aggioranto su tutte le news</span>
+              <span className="spec-value">Seguici su tutti i social</span>
             </div>
           </div>
         </div>

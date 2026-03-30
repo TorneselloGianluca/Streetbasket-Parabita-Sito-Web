@@ -31,8 +31,8 @@ function App() {
 
           {/* Da sistemare le rotte*/}
           <Route path="/iscrizione/senior" element={<Senior/>} />
-          <Route path="/iscrizione/u19" element={<u19 />} />
-          <Route path="/iscrizione/u17" element={<u17 />} />
+          <Route path="/iscrizione/u19" element={<WorkInProgress />} />
+          <Route path="/iscrizione/u17" element={<WorkInProgress />} />
           <Route path="/admin/partite" element={<AggiornamentoPartite />} />
           <Route path="/admin/classifiche" element={<AggiornamentoClassifiche />} />
           <Route path="/admin" element={<Admin />} />
