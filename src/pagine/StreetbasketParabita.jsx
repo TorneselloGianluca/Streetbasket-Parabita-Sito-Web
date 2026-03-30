@@ -11,6 +11,7 @@ import DescrizioneEvento from '../components/DescrizioneEvento';
 import StreetbasketNav from '../components/StreetbasketNav';
 import Anni from '../components/Anni';
 import InstagramPreview from '../components/InstagramPreview';
+import SocialPreviews from '../components/SocialPreviews';
 
 
 function StreetbasketParabita() {
@@ -78,7 +79,14 @@ function StreetbasketParabita() {
         </div>
       </section>
 
-      <div className="disclaimer-box">
+
+
+      {/* Sezione 5: Contatti */}
+      <section id="contatti">
+      <SocialPreviews />
+      </section>
+
+            <div className="disclaimer-box">
         <p>
           <strong>Informativa Immagini:</strong> Partecipando all'evento, si acconsente alla realizzazione 
           e alla pubblicazione di foto e video sui nostri canali ufficiali. Tutti i partecipanti registrati 
@@ -86,30 +94,9 @@ function StreetbasketParabita() {
         </p>
       </div>
 
-      {/* Sezione 5: Contatti */}
-      <section id="contatti">
-        <footer className="project-footer">
-          <div className="footer-content">
-            <h2>Contatti</h2>
-            <div className="social-links">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-item">
-                <FaInstagram className="icon" />
-                <span>Instagram</span>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="social-item">
-                <FaFacebook className="icon" />
-                <span>Facebook</span>
-              </a>
-              <a href="mailto:info@esempio.it" className="social-item">
-                <FaEnvelope className="icon" />
-                <span>Email</span>
-              </a>
-            </div>
-            <p className="copyright">© 2026 Streetbasket Parabita | Gianluca Tornesello</p>
-          </div>
-        </footer>
-      </section>
+      
     </div>
+
   );
 }
 
