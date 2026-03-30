@@ -19,14 +19,14 @@ const Edizione2026 = () => {
       titolo: 'UNDER 19',
       sottotitolo: 'Nati dal 2007',
       img: under19Img,
-      path: '/iscrizione/under19'
+      path: '/iscrizione/u19'
     },
     {
       id: 'minibasket',
       titolo: 'U21',
       sottotitolo: 'Categoria Under 21 (2004-2006)',
       img: u21Img,
-      path: '/iscrizione/minibasket'
+      path: '/iscrizione/u21'
     }
   ];
 

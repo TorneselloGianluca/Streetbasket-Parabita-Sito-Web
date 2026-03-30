@@ -4,7 +4,7 @@ import '../pagine_css/Senior.css';
 
 const Senior = () => {
   // --- CAMBIA SOLO QUESTA RIGA IN BASE AL FILE ---
-  const categoriaCorrente = "Senior"; // Metti "U19" o "U17" negli altri file
+  const categoriaCorrente = "u21"; 
   // ----------------------------------------------
 
   const [partite, setPartite] = useState([]);
