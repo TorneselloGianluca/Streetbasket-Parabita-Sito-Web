@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../components_css/Nav.css';
 import { FaCog } from 'react-icons/fa';
-// Importa il tuo logo (assicurati che il percorso sia corretto)
 import logoStreet from '../assets/logoTorneo.png'; 
 
 function Nav() {
@@ -9,9 +8,7 @@ function Nav() {
     <nav className="navbar">
       <div className="nav-logo">
         <Link to="/" className="logo-container">
-          {/* Foto del logo in piccolo */}
           <img src={logoStreet} alt="Logo Streetbasket" className="nav-logo-img" />
-          {/* Scritta nera */}
           <span className="logo-text">STREETBASKET PARABITA</span>
         </Link>
       </div>

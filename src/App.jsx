@@ -20,7 +20,7 @@ import GestioneSquadre from './pagine/gestioneSquadre';
 
 function App() {
   return (
-      <Router basename="/Streetbasket-Parabita-Sito-Web">
+      <Router>
         <Nav /> 
         <Routes>
           <Route path="/" element={<StreetbasketParabita />} />
