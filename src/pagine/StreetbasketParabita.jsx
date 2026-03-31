@@ -12,7 +12,7 @@ import StreetbasketNav from '../components/StreetbasketNav';
 import Anni from '../components/Anni';
 import InstagramPreview from '../components/InstagramPreview';
 import SocialPreviews from '../components/SocialPreviews';
-
+import NewEdition from '../components/NewEdition';
 
 function StreetbasketParabita() {
   const videoRef = useRef(null);
@@ -48,6 +48,7 @@ function StreetbasketParabita() {
       
       {/* Sezione 1: Progetto */}
       <section id="progetto">
+        <NewEdition />
         <DescrizioneEvento />
       </section>
       
@@ -94,7 +95,7 @@ function StreetbasketParabita() {
         </p>
       </div>
 
-      
+
     </div>
 
   );
