@@ -46,9 +46,21 @@ function StreetbasketParabita() {
       {/* Navigazione Secondaria */}
       <StreetbasketNav />
       
+      <section className="anni-section">
+      <div className="social-header">
+        <h2 className="social-main-title">Resta aggiornato con la nostra sezione <span className="highlight"> news</span></h2>
+        <p className="social-sub-title">Nuova edizione in ARRIVO! </p>
+      </div> 
+      <NewEdition />
+      </section>
+      
       {/* Sezione 1: Progetto */}
       <section id="progetto">
-        <NewEdition />
+      <div className="social-header">
+        <h2 className="social-main-title">Noi siamo <span className="highlight">Streetbasket Parabita</span> </h2>
+        <p className="social-sub-title">Chi siamo e cosa facciamo</p>
+      </div> 
+       
         <DescrizioneEvento />
       </section>
       
@@ -63,7 +75,10 @@ function StreetbasketParabita() {
          <MaglieShop />
       </section>
 
-      
+      <div className="social-header">
+        <h2 className="social-main-title">Vieni a <span className="highlight">giocare</span> con noi</h2>
+        <p className="social-sub-title">Ci trovi al campetto di Piazza Regina del Cileo</p>
+      </div> 
       {/* Sezione Mappa (Opzionale: puoi darle un id se vuoi un tasto dedicato) */}
       <section className="map-section">
         <div className="map-container">

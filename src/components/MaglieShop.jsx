@@ -71,7 +71,10 @@ function MaglieShop() {
 
   return (
     <section className="shop-section">
-      <h2 className="shop-title">Merchandising Ufficiale</h2>
+      <div className="social-header">
+        <h2 className="social-main-title">Guarda il nostro <span className="highlight">merchandising</span> ufficiale</h2>
+        <p className="social-sub-title">Ogni anno nuove maglie da gioco</p>
+      </div>
       <div className="shop-grid">
         {prodotti.map((item) => (
           <div className="product-card" key={item.id}>

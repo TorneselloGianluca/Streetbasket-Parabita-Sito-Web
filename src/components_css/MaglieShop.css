@@ -28,7 +28,7 @@
 }
 
 .product-card {
-  background: #a14c07; /* Grigio scuro per la card */
+  background: #0f0f0f; /* Grigio scuro per la card */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
