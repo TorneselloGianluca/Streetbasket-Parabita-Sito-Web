@@ -17,6 +17,9 @@ import Admin from './pagine/Admin';
 import AggiornamentoPartite from './pagine/aggiornamentoPartite';
 import AggiornamentoClassifiche from './pagine/aggiornamentoClassifiche';
 import GestioneSquadre from './pagine/gestioneSquadre';
+import Gallery from './pagine/Gallery';
+
+
 
 function App() {
   return (
@@ -37,7 +40,7 @@ function App() {
           <Route path="/admin/classifiche" element={<AggiornamentoClassifiche />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/squadre" element={<GestioneSquadre />} />
-        
+          <Route path="/gallery" element={<Gallery />} />        
         </Routes>
       </Router>
   );

@@ -75,7 +75,7 @@ function StreetbasketParabita() {
 
       <div className="social-header">
         <h2 className="social-main-title">Vieni a <span className="highlight">giocare</span> con noi</h2>
-        <p className="social-sub-title">Ci trovi al campetto di Piazza Regina del Cileo</p>
+        <p className="social-sub-title">Ci trovi al campetto di Piazza Regina del Cielo</p>
       </div> 
       {/* Sezione Mappa (Opzionale: puoi darle un id se vuoi un tasto dedicato) */}
       <section className="map-section">
