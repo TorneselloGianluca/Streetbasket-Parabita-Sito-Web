@@ -4,8 +4,6 @@ import '../pagine_css/StreetbasketParabita.css';
 import MaglieShop from '../components/MaglieShop';
 import logoStreet from '../assets/logoTorneo.png';
 import videoStreet from '../assets/foto_streetbasketParabita/video_torneo.mp4';
-import FormIscrizione from '../components/FormIscrizione';
-import PaginaIscrizione from '../components/PaginaIscrizione';
 import CaroselloFotoTorneo from '../components/CaroselloFotoTorneo';
 import DescrizioneEvento from '../components/DescrizioneEvento';
 import StreetbasketNav from '../components/StreetbasketNav';
