@@ -29,7 +29,7 @@ function App() {
           <Route path="/" element={<StreetbasketParabita />} />
           <Route path="/workInProgress" element={<WorkInProgress />} />
           <Route path="/Edizione2026" element={<Edizione2026 />} />
-          <Route path="/sponsor" element={<Sponsor />} />
+          <Route path="/sponsor" element={<WorkInProgress />} />
           <Route path="/lavoraConNoi" element={<Lavora />} />
 
           {/* Da sistemare le rotte*/}
