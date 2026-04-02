@@ -102,8 +102,8 @@ function StreetbasketParabita() {
               <source src={videoCampo} type="video/mp4" />
             </video>
             <div className="video-overlay-content">
-              <span className="live-tag">Piazza Regina del Cielo</span>
-              <h3>Il nostro campetto</h3>
+              <span className="live-tag">Campetto scuola media G. DIMO</span>
+              <h3>PIAZZA SALVO D'ACQUISTO</h3>
             </div>
           </div>
 
