@@ -11,6 +11,8 @@ import Anni from '../components/Anni';
 import InstagramPreview from '../components/InstagramPreview';
 import SocialPreviews from '../components/SocialPreviews';
 import NewEdition from '../components/NewEdition';
+import videoCampo from '../assets/foto_streetbasketParabita/campo.mp4';  
+
 
 function StreetbasketParabita() {
   const videoRef = useRef(null);
@@ -78,18 +80,33 @@ function StreetbasketParabita() {
         <p className="social-sub-title">Ci trovi al campetto di Piazza Regina del Cielo</p>
       </div> 
       {/* Sezione Mappa (Opzionale: puoi darle un id se vuoi un tasto dedicato) */}
-      <section className="map-section">
-        <div className="map-container">
-          <iframe 
-            src="https://maps.google.com/maps?q=40.0476257,18.123300&z=18&output=embed" 
-            width="100%" 
-            height="450" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Mappa Streetbasket Parabita"
-          ></iframe>
+      <section className="location-section">
+        <div className="location-container">
+          
+          {/* Colonna Mappa */}
+          <div className="map-box">
+            <iframe 
+              src="https://maps.google.com/maps?q=40.0476257,18.123300&z=18&output=embed" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mappa Streetbasket Parabita"
+            ></iframe>
+            <div className="location-badge">DOVE TROVARCI</div>
+          </div>
+
+          {/* Colonna Video */}
+          <div className="location-video-box">
+            <video autoPlay loop muted playsInline className="location-video">
+              <source src={videoCampo} type="video/mp4" />
+            </video>
+            <div className="video-overlay-content">
+              <span className="live-tag">Piazza Regina del Cielo</span>
+              <h3>Il nostro campetto</h3>
+            </div>
+          </div>
+
         </div>
       </section>
 
