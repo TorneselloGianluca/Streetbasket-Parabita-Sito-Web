@@ -39,6 +39,26 @@ function Nav() {
         </li>
         <li>
           <Link 
+            to="/merchandising" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/merchandising' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/merchandising' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/merchandising' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Merchandising
+          </Link>
+        </li>
+        <li>
+          <Link 
             to="/Edizione2026" 
             className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
               location.pathname === '/Edizione2026' 
