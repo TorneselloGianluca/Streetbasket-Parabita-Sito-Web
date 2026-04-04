@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
-import '../pagine_css/AdminDashboard.css';
 
 const AggiornamentoPartite = () => {
   const [partite, setPartite] = useState([]);

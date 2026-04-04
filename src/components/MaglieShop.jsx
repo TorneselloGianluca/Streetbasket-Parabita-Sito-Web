@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components_css/MaglieShop.css';
 
 import maglia1 from '../assets/1.png';
 import maglia2 from '../assets/2.png';
@@ -70,23 +69,35 @@ function MaglieShop() {
   };
 
   return (
-    <section className="shop-section">
-      <div className="social-header">
-        <h2 className="social-main-title">Guarda il nostro <span className="highlight">merchandising</span> ufficiale</h2>
-        <p className="social-sub-title">Ogni anno nuove maglie da gioco</p>
+    <section className="py-15 px-4 bg-black">
+      <div className="mb-10 text-center">
+        <h2 className="text-clamp text-3xl md:text-4xl m-0 text-white uppercase tracking-widest">Guarda il nostro <span className="text-street-orange">merchandising</span> ufficiale</h2>
+        <p className="text-street-secondary-text text-sm md:text-base">Ogni anno nuove maglie da gioco</p>
       </div>
-      <div className="shop-grid">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
         {prodotti.map((item) => (
-          <div className="product-card" key={item.id}>
-            <div className="product-image">
-              <img src={item.img} alt={item.nome} />
-              <span className="price-tag">{item.prezzo}</span>
+          <div key={item.id} className="group bg-street-dark-card rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-blue-600 transition-all duration-300 flex flex-col hover:-translate-y-1 cursor-pointer">
+            <div className="relative h-48 md:h-56 lg:h-80 overflow-hidden">
+              <img 
+                src={item.img} 
+                alt={item.nome} 
+                className="w-full h-full object-cover"
+              />
+              <span className="absolute top-2 right-2 bg-blue-600 text-white px-2.5 py-1 rounded-full text-xs font-bold">
+                {item.prezzo}
+              </span>
             </div>
-            <div className="product-info">
-              <h3>{item.nome}</h3>
-              <p>{item.descrizione}</p>
+            <div className="p-4 text-center flex flex-col justify-between flex-grow">
+              <div>
+                <h3 className="m-0 mb-2 text-xs md:text-lg font-semibold text-white leading-tight">
+                  {item.nome}
+                </h3>
+                <p className="text-gray-400 text-xs md:text-sm mb-3 line-clamp-2">
+                  {item.descrizione}
+                </p>
+              </div>
               <button 
-                className="check-btn" 
+                className="w-full py-2 md:py-3 bg-white text-black rounded font-bold uppercase text-xs md:text-sm transition-all duration-300 hover:bg-blue-600 hover:text-white"
                 onClick={() => handleCheck(item.nome)}
               >
                 Verifica Disponibilità

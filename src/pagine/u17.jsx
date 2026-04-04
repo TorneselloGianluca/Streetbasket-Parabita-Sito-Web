@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
-import '../pagine_css/Senior.css';
 
 const Senior = () => {
   // --- CAMBIA SOLO QUESTA RIGA IN BASE AL FILE ---
