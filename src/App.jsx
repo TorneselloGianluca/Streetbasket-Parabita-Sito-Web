@@ -6,7 +6,7 @@ import WorkInProgress from './pagine/WorkInProgress';
 import Edizione2026 from './pagine/Edizione2026';
 import Sponsor from './pagine/Sponsor';
 import Lavora from './pagine/Lavora';
-
+import Merchandising from './pagine/Merchandising';
 import Senior from './pagine/Senior';
 import u19 from './pagine/u19';
 import u17 from './pagine/u17';
@@ -31,7 +31,8 @@ function App() {
           <Route path="/Edizione2026" element={<Edizione2026 />} />
           <Route path="/sponsor" element={<WorkInProgress />} />
           <Route path="/lavoraConNoi" element={<Lavora />} />
-
+          <Route path="/merchandising" element={<Merchandising />} />
+          <Route path="/lavoraConNoi" element={<Lavora />} />
           {/* Da sistemare le rotte*/}
           <Route path="/iscrizione/senior" element={<Senior/>} />
           <Route path="/iscrizione/u19" element={<WorkInProgress />} />
