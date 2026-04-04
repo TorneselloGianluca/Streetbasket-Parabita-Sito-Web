@@ -22,7 +22,7 @@ function Nav() {
         <li><Link to="/gallery" className={`nav-item ${location.pathname === '/workInProgress' ? 'active' : ''}`}>Gallery</Link></li>
         <li><Link to="/lavoraConNoi" className={`nav-item ${location.pathname === '/lavoraConNoi' ? 'active' : ''}`}>Staff</Link></li>
         <li>
-          <Link to="/admin" className="nav-item settings-icon" title="Admin Panel">
+          <Link to="/workInProgress" className="nav-item settings-icon" title="Admin Panel">
             <FaCog />
           </Link>
         </li>
