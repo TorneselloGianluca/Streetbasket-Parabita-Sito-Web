@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa';
-import MaglieShop from '../components/MaglieShop';
 import logoStreet from '../assets/logoTorneo.png';
 import videoStreet from '../assets/foto_streetbasketParabita/video_torneo.mp4';
 import CaroselloFotoTorneo from '../components/CaroselloFotoTorneo';
@@ -43,7 +42,7 @@ function StreetbasketParabita() {
       </section>
 
       {/* Navigazione Secondaria */}
-      <StreetbasketNav />
+      {/* <StreetbasketNav /> Momentaneamete rimossa, da capire se tenere */}
       
       <section className="bg-black py-15">
       <div className="text-center mb-16 px-5">
@@ -66,11 +65,6 @@ function StreetbasketParabita() {
       {/* Sezione 2: Gallery */}
       <section id="gallery">
         <CaroselloFotoTorneo />
-      </section>
-
-      {/* Sezione 3: Shop */}
-      <section id="shop">
-         <MaglieShop />
       </section>
 
       <div className="text-center mb-16 px-5 py-10 bg-black">
