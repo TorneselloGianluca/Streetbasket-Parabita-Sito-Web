@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components_css/CaroselloFotoTorneo.css';
 
 // Importazioni (assumendo che le foto siano 10)
 import Foto1 from '../assets/foto_torneo/foto1.jpg';
@@ -18,11 +17,26 @@ const CaroselloFotoTorneo = () => {
   const immagini = [...listaBase, ...listaBase]; 
 
   return (
-    <div className="carosello-container-full">
-      <div className="carosello-track">
+    <div className="relative w-full h-96 bg-black overflow-hidden">
+      {/* Fade edges left */}
+      <div className="absolute top-0 left-0 w-[10%] h-full z-20 pointer-events-none bg-gradient-to-r from-black to-transparent"></div>
+      {/* Fade edges right */}
+      <div className="absolute top-0 right-0 w-[10%] h-full z-20 pointer-events-none bg-gradient-to-l from-black to-transparent"></div>
+
+      <div className="flex w-max h-full hover:pause animate-scroll-flexible group" style={{
+        animation: 'scroll-flexible 60s linear infinite',
+        cursor: 'pointer'
+      }}
+        onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+        onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+      >
         {immagini.map((img, index) => (
-          <div className="carosello-slide" key={index}>
-            <img src={img} alt={`Streetbasket Parabita ${index}`} />
+          <div key={index} className="h-full flex-shrink-0">
+            <img 
+              src={img} 
+              alt={`Streetbasket Parabita ${index}`} 
+              className="h-full w-auto object-contain hover:scale-103 transition-transform duration-500 cursor-pointer"
+            />
           </div>
         ))}
       </div>

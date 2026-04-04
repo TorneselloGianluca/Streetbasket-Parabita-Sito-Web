@@ -34,24 +34,24 @@ const jerseys = [
 
 const Merchandising = () => {
   return (
-    <div style={styles.page}>
-      <header style={styles.header}>
-        <h1 style={styles.title}>Official Merchandise</h1>
-        <p>Wear your passion. High-quality jerseys for true fans.</p>
+    <div className="p-8 bg-gray-100 min-h-screen">
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-black text-gray-900 mb-2">Official Merchandise</h1>
+        <p className="text-gray-600">Wear your passion. High-quality jerseys for true fans.</p>
       </header>
 
-      <div style={styles.grid}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {jerseys.map((item) => (
-          <div key={item.id} style={styles.card}>
-            <div style={styles.imageContainer}>
-              <img src={item.image} alt={item.name} style={styles.image} />
+          <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg flex flex-col hover-lift">
+            <div className="w-full h-96 bg-gray-200">
+              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
             </div>
-            <div style={styles.details}>
-              <h3 style={styles.itemName}>{item.name}</h3>
-              <p style={styles.description}>{item.description}</p>
-              <p style={styles.price}>{item.price}</p>
+            <div className="p-6 flex-grow flex flex-col">
+              <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+              <p className="text-sm text-gray-600 mb-4 flex-grow">{item.description}</p>
+              <p className="text-lg font-bold text-street-orange mb-4">{item.price}</p>
               <button 
-                style={styles.button}
+                className="bg-black text-white px-4 py-2 rounded font-semibold transition-colors duration-300 hover:bg-gray-800 cursor-pointer"
                 onClick={() => alert(`Added ${item.name} to cart!`)}
               >
                 Add to Cart
@@ -62,83 +62,6 @@ const Merchandising = () => {
       </div>
     </div>
   );
-};
-
-// Simple CSS-in-JS for styling
-const styles = {
-  page: {
-    padding: '2rem',
-    backgroundColor: '#f9f9f9',
-    minHeight: '100vh',
-    fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
-  },
-  header: {
-    textAlign: 'center',
-    marginBottom: '3rem',
-  },
-  title: {
-    fontSize: '2.5rem',
-    color: '#1a1a1a',
-    marginBottom: '0.5rem'
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '2rem',
-    maxWidth: '1200px',
-    margin: '0 auto'
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: '12px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    overflow: 'hidden',
-    transition: 'transform 0.2s',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  imageContainer: {
-    width: '100%',
-    height: '350px',
-    backgroundColor: '#eee'
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover'
-  },
-  details: {
-    padding: '1.5rem',
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  itemName: {
-    fontSize: '1.25rem',
-    margin: '0 0 0.5rem 0'
-  },
-  description: {
-    fontSize: '0.9rem',
-    color: '#666',
-    marginBottom: '1rem',
-    flexGrow: 1
-  },
-  price: {
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    color: '#2ecc71',
-    marginBottom: '1rem'
-  },
-  button: {
-    backgroundColor: '#000',
-    color: '#fff',
-    border: 'none',
-    padding: '0.8rem',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    fontWeight: '600',
-    transition: 'background 0.3s'
-  }
 };
 
 // THIS IS THE LINE THAT FIXES YOUR ERROR:

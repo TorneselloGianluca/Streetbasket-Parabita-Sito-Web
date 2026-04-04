@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaCamera, FaArrowRight } from 'react-icons/fa';
-import '../pagine_css/Gallery.css';
 
 // Importa le copertine (i tuoi percorsi restano validi)
 import cover2020 from '../assets/staff.png';
@@ -22,22 +21,86 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="gallery-page-wrapper">
+    <div className="bg-black min-h-screen py-24 text-white overflow-x-hidden">
       
-      <div className="gallery-carousel-container">
-        <div className="edizioni-flex-wrapper">
+      <div className="w-screen h-65vh flex items-center justify-center">
+        <div className="flex w-full h-full gap-0"
+          onMouseEnter={(e) => {
+            e.currentTarget.querySelectorAll('.edizione-card').forEach(card => {
+              card.style.flex = '0.5';
+              card.style.opacity = '0.6';
+            });
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.querySelectorAll('.edizione-card').forEach(card => {
+              card.style.flex = '1';
+              card.style.opacity = '1';
+            });
+          }}>
           {edizioni.map((edi) => (
-            <Link to={edi.path} key={edi.id} className="edizione-card">
+            <Link to={edi.path} key={edi.id} className="edizione-card relative flex-1 h-full overflow-hidden text-decoration-none flex items-end py-10 px-10 transition-all duration-700 border-r border-gray-800 no-underline hover:z-10"
+              style={{
+                flex: 1,
+                transitionTimingFunction: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                minWidth: '80px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.flex = '4';
+                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.zIndex = '10';
+                e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 0, 0, 0.8)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.flex = '1';
+                // Reset is handled by parent
+              }}>
+              {/* Sfondo */}
               <div 
-                className="edizione-bg" 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-800"
                 style={{ backgroundImage: `url(${edi.img})` }}
               ></div>
-              <div className="edizione-overlay"></div>
-              
-              <div className="edizione-content">
-                <span className="edizione-year">{edi.anno}</span>
-                <h2 className="edizione-title">{edi.titolo}</h2>
-                <div className="edizione-btn">
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-60 hover:bg-opacity-40 transition-all duration-300"></div>
+
+              {/* Contenuto */}
+              <div className="relative z-2 text-white">
+                <span 
+                  className="block text-xs opacity-70 mb-2 font-black uppercase tracking-widest"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '0.7';
+                  }}>
+                  {edi.anno}
+                </span>
+                <h2 
+                  className="text-4xl md:text-5xl font-black m-0 uppercase tracking-wider"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                  style={{
+                    transition: 'transform 0.3s ease'
+                  }}>
+                  {edi.titolo}
+                </h2>
+                <div 
+                  className="mt-5 text-sm font-black uppercase tracking-widest flex items-center gap-3 opacity-0 -translate-y-2 transition-all duration-500"
+                  style={{
+                    transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '0';
+                    e.currentTarget.style.transform = 'translateY(8px)';
+                  }}>
                   VEDI FOTO <FaArrowRight />
                 </div>
               </div>

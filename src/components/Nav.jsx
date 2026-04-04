@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import '../components_css/Nav.css';
 import { FaCog } from 'react-icons/fa';
 import logoStreet from '../assets/logoTorneo.png'; 
 
@@ -7,23 +6,143 @@ function Nav() {
   const location = useLocation();
 
   return (
-    <nav className="navbar">
-      <div className="nav-logo">
-        <Link to="/" className="logo-container">
-          <img src={logoStreet} alt="Logo Streetbasket" className="nav-logo-img" />
-          <span className="logo-text">STREETBASKET <span className="highlight">PARABITA</span></span>
+    <nav className="sticky top-0 z-50 w-full px-[5%] py-3 flex justify-between items-center bg-black bg-opacity-85 backdrop-blur-glass border-b border-white border-opacity-5 transition-all duration-300">
+      <div>
+        <Link to="/" className="flex items-center gap-3 no-underline">
+          <img src={logoStreet} alt="Logo Streetbasket" className="h-11 w-auto drop-shadow-lg" />
+          <span className="font-black text-white uppercase text-lg tracking-widest">
+            STREETBASKET <span className="text-street-orange">PARABITA</span>
+          </span>
         </Link>
       </div>
       
-      <ul className="nav-links">
-        <li><Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-        <li><Link to="/merchandising" className={`nav-item ${location.pathname === '/merchandising' ? 'active' : ''}`}>Merchandising</Link></li>
-        <li><Link to="/Edizione2026" className={`nav-item ${location.pathname === '/Edizione2026' ? 'active' : ''}`}>Edizione 2026</Link></li>
-        <li><Link to="/sponsor" className={`nav-item ${location.pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</Link></li>
-        <li><Link to="/gallery" className={`nav-item ${location.pathname === '/workInProgress' ? 'active' : ''}`}>Gallery</Link></li>
-        <li><Link to="/lavoraConNoi" className={`nav-item ${location.pathname === '/lavoraConNoi' ? 'active' : ''}`}>Staff</Link></li>
+      <ul className="flex list-none items-center gap-6 m-0 p-0">
         <li>
-          <Link to="/workInProgress" className="nav-item settings-icon" title="Admin Panel">
+          <Link 
+            to="/" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/merchandising" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/merchandising' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/merchandising' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/merchandising' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Merchandising
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/Edizione2026" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/Edizione2026' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/Edizione2026' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/Edizione2026' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Edizione 2026
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/sponsor" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/sponsor' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/sponsor' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/sponsor' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Sponsor
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/gallery" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/workInProgress' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/workInProgress' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/workInProgress' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Gallery
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/lavoraConNoi" 
+            className={`relative no-underline font-bold text-sm uppercase tracking-widest transition-colors duration-300 pb-1.25 ${
+              location.pathname === '/lavoraConNoi' 
+                ? 'text-street-orange' 
+                : 'text-white text-opacity-70 hover:text-white'
+            }`}
+            style={{
+              background: location.pathname === '/lavoraConNoi' 
+                ? `linear-gradient(to right, #eb6505, #eb6505) bottom left no-repeat`
+                : 'none',
+              backgroundSize: location.pathname === '/lavoraConNoi' ? '100% 2px' : '0 2px',
+              backgroundOrigin: 'border-box',
+              transition: 'background-size 0.3s ease'
+            }}
+          >
+            Staff
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/admin" 
+            className="text-white text-opacity-70 hover:text-street-orange flex items-center text-lg transition-all duration-300 hover:rotate-90"
+            title="Admin Panel"
+          >
             <FaCog />
           </Link>
         </li>

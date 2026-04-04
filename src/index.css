@@ -1,52 +1,161 @@
-:root {
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #213547;
-  background-color: #ffffff;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Reset fondamentale per layout full-width */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-#root {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
+/* UX & Performance Improvements */
 * {
-  box-sizing: border-box; /* Cruciale per gestire larghezze e padding */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-:root {
-  /* Variabili Giorno */
-  --bg-color: #ffffff;
-  --text-color: #1a1a1a;
-  --card-bg: #ffffff;
-  --border-color: #f0f0f0;
-  --primary: #646cff;
-  --secondary-text: #666666;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-body.dark-mode {
-  /* Variabili Notte */
-  --bg-color: #0f0f0f;
-  --text-color: #f0f0f0;
-  --card-bg: #1a1a1a;
-  --border-color: #333333;
-  --secondary-text: #aaaaaa;
+/* Smooth transitions globally */
+button, a, input, textarea, select {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+/* Better focus states for accessibility */
+:focus-visible {
+  outline: 2px solid #ff6b00;
+  outline-offset: 2px;
+}
+
+/* Improve link hover states */
+a:not([class]) {
+  @apply transition-colors duration-250 ease-in-out;
+}
+
+/* Better input focus */
+input:focus, textarea:focus, select:focus {
+  @apply transition-all duration-250;
+}
+
+@layer base {
+  :root {
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* Reset fondamentale per layout full-width */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html {
+    @apply bg-street-light-bg text-street-light-text;
+    scroll-behavior: smooth;
+  }
+
+  html.dark-mode {
+    @apply bg-street-dark-bg text-street-dark-text;
+  }
+
+  #root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* Component layer for custom button and card styles */
+@layer components {
+  /* Smooth button transitions */
+  button {
+    @apply transition-all duration-300 ease-smooth;
+  }
+
+  button:hover {
+    @apply transform -translate-y-0.5;
+  }
+
+  button:active {
+    @apply translate-y-0;
+  }
+
+  /* Enhanced card hover effect */
+  .card {
+    @apply transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-smooth-lg;
+  }
+
+  /* Link underline effect */
+  .nav-link {
+    @apply relative transition-colors duration-300;
+  }
+
+  /* Smooth section transitions */
+  section {
+    @apply transition-all duration-300;
+  }
+
+  /* Image loading and transitions */
+  img {
+    @apply transition-all duration-350;
+  }
+}
+
+/* Utility layer for reusable patterns */
+@layer utilities {
+  /* Smooth appearance animation utility */
+  .animate-in {
+    @apply animate-fade-in;
+  }
+
+  /* Glow effect for interactive elements */
+  .glow-focus {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600;
+  }
+
+  /* Smooth hover elevation */
+  .hover-lift {
+    @apply hover:-translate-y-1 active:translate-y-0 transition-transform duration-300;
+  }
+
+  /* Disable animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Performance optimization: backface-visibility */
+  .hardware-accelerate {
+    @apply [backface-visibility:hidden];
+  }
 }
 
 body {
