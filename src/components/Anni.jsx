@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components_css/Anni.css';
 import { Link } from 'react-router-dom';
 
 
@@ -17,18 +16,39 @@ const Anni = () => {
   const loopData = [...edizioniData, ...edizioniData];
 
   return (
-    <section className="edizioni-section">
-      <div className="edizioni-slider">
-        <div className="edizioni-track">
+    <section className="py-20 bg-street-light-bg overflow-hidden">
+      <div className="w-full flex">
+        <div 
+          className="flex gap-8 animate-scroll-edizioni hover:pause"
+          style={{
+            animation: 'scrollEdizioni 40s linear infinite',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+          onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+        >
           {loopData.map((ed, index) => (
-            <Link to={`/edizione/${ed.anno}`} key={index} className="edizione-card">
+            <Link 
+              to={`/edizione/${ed.anno}`} 
+              key={index} 
+              className="group relative w-70 h-96 rounded-3xl overflow-hidden no-underline flex justify-center items-center transition-transform duration-400 hover:scale-105 flex-shrink-0 z-10"
+            >
               <div 
-                className="edizione-bg" 
-                style={{ backgroundImage: `url(${ed.img})` }}
+                className="absolute inset-0 bg-cover bg-center transition-filter duration-400"
+                style={{ 
+                  backgroundImage: `url(${ed.img})`,
+                  filter: 'blur(4px) brightness(0.6)'
+                }}
               ></div>
-              <div className="edizione-content">
-                <span className="anno-text">{ed.anno}</span>
-                <span className="edizione-label">Edizione</span>
+              <div className="group-hover:invert-0" style={{ filter: 'blur(0px) brightness(0.8)' }}>
+                <div className="absolute inset-0 group-hover:filter" style={{ backgroundImage: `url(${ed.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+              </div>
+              <div className="relative z-20 text-center text-white">
+                <span className="block text-5xl font-black leading-tight" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+                  {ed.anno}
+                </span>
+                <span className="block text-sm uppercase tracking-widest mt-1 font-semibold">
+                  Edizione
+                </span>
               </div>
             </Link>
           ))}
